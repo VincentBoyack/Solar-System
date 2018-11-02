@@ -24,6 +24,15 @@ PImage img8;
 void setup() {
   fullScreen();
   background(0);
+  img = loadImage("Mercury.png");
+  img1 = loadImage("venus.png");
+  img2 = loadImage("earth.png");
+  img3 = loadImage("mars.png");
+  img4 = loadImage("jupiter.png");
+  img5 = loadImage("saturn.png");
+  img6 = loadImage("uranus.png");
+  img7 = loadImage("neptune.png");
+  img8 = loadImage("sun.png");
 }
 
 void draw() {
@@ -39,15 +48,7 @@ void draw() {
   uranus();
   neptune();
   belt();
-  img = loadImage("Mercury.png");
-  img1 = loadImage("venus.png");
-  img2 = loadImage("earth.png");
-  img3 = loadImage("mars.png");
-  img4 = loadImage("jupiter.png");
-  img5 = loadImage("saturn.png");
-  img6 = loadImage("uranus.png");
-  img7 = loadImage("neptune.png");
-  img8 = loadImage("sun.png");
+  
 }
 
 void mercury() {
