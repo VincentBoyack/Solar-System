@@ -20,10 +20,11 @@ PImage img5;
 PImage img6;
 PImage img7;
 PImage img8;
+PImage img9;
 
 void setup() {
   fullScreen();
-  background(0);
+ background(0);
   img = loadImage("Mercury.png");
   img1 = loadImage("venus.png");
   img2 = loadImage("earth.png");
@@ -33,6 +34,8 @@ void setup() {
   img6 = loadImage("uranus.png");
   img7 = loadImage("neptune.png");
   img8 = loadImage("sun.png");
+  img9 = loadImage("sun.png");
+  imageMode(CENTER);
 }
 
 void draw() {
@@ -48,7 +51,7 @@ void draw() {
   uranus();
   neptune();
   belt();
-  
+  stars();
 }
 
 void mercury() {
@@ -111,7 +114,7 @@ void sun() {
 
 void moon() {
   fill(155);
-  ellipse(earthX+moonX*cos(radians(thetaMoon)), earthY+moonY*sin(radians(thetaMoon)), 3, 3);
+  image(img9, earthX+moonX*cos(radians(thetaMoon)), earthY+moonY*sin(radians(thetaMoon)), 3, 3);
   thetaMoon = (thetaMoon+2)%360;
 }
 
@@ -119,7 +122,13 @@ void moon() {
 void belt() {
   fill(155);
   for (float theta=0; theta<1000; theta++) {
-    ellipse(width/2+random(220, 250)*cos(radians(theta)), height/2+random(220, 250)*sin(radians(theta)), 2, 2);
+    ellipse(width/2+random(220, 250)*cos(radians(theta)), height/2+random(220, 250)*sin(radians(theta)), 1, 1);
   }
-  imageMode(CENTER);
+}
+
+void stars(){
+  fill(255);
+  for (int i=0; i<1000; i++) {
+    ellipse(random(1920),random(1080),1,1);  
+  }
 }
